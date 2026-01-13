@@ -1,0 +1,236 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Analyzer" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:isactr="http://schemas.uipath.com/workflow/integration-service-activities/isactr" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uiascb="clr-namespace:UiPath.IntegrationService.Activities.SWEntities.CE5D4570506_v1_sub_chat_sub_completion_Create.Bundle;assembly=CE5D4570506_v1_sub_c.F3N9eMuBeQ13sETf31wNDg2" xmlns:upr="clr-namespace:UiPath.Platform.ResourceHandling;assembly=UiPath.Platform" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_AnalysisPath" Type="InArgument(x:String)" />
+    <x:Property Name="out_image_analysis" Type="OutArgument(x:String)" />
+    <x:Property Name="in_photo_path" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>Analyzer_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Models.FilterBuilder</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Models</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Helpers.TypeDetailsCustomization</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Activities</x:String>
+      <x:String>UiPath.Platform.Activities</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.CE5D4570506_v1_sub_chat_sub_completion_Create.Bundle</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>UiPath.Shared.Recorder.Localization</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.Platform</x:String>
+      <x:String>System.IO</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.IntegrationService.Activities.Runtime</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>CE5D4570506_v1_sub_c.F3N9eMuBeQ13sETf31wNDg2</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.MetadataLoadContext</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.CodedWorkflows</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence DisplayName="Analyzer" sap:VirtualizedContainerService.HintSize="1121,807.6566666666666" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,48" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Analyzing the potential damage for photo &quot; + System.IO.Path.GetFileName(in_photo_path)]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:LogMessage>
+    <isactr:ConnectorActivity Configuration="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" ConnectionId="f51acf0e-4216-4494-88c2-d7e5d4570506" DisplayName="Image Analysis" sap:VirtualizedContainerService.HintSize="450,48" sap2010:WorkflowViewState.IdRef="ConnectorActivity_1" UiPathActivityTypeId="267d190b-590f-304a-a865-e9d3722fa772">
+      <isactr:ConnectorActivity.FieldObjects>
+        <isactr:FieldObject Name="modelName" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:String">gpt-5.1-2025-11-13</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="prompt" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:String" xml:space="preserve">This is a photo of a vehicle that was involved in an accident. Describe the damage degree for each part of the vehicle in a table.
+
+Only the visible parts should be described. No comment should be made on invisible parts.
+
+I want the whole output to be formatted in two html tables. If no relevant data is available for a table, don't display its rows
+
+The first one should have three columns : vehicle part, damage description and damage degree from 0 to 10 (0 being not damaged, and 10 being completely damaged).
+
+Just mention the eight most damaged parts, if applicable.
+
+The second table should have two columns. Its name is Vehicle Data and it should be displayed as a h2 header. Each row should contain the name of a property on the first column and the property's value on the second column.
+
+The first property is called 'Vehicle ID' . For the first property's value, you should retrieve, if visible, the license plate of the vehicle from the image, or the id of the vehicle. It should be a 7 characters code.
+
+The next property is called 'Mileage' . For its value, you should retrieve, if visible, the number of miles travelled, as shown on the dashboard of the car, on the odometer.
+
+Do not output any additional text beyond the html tables and their names.</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="image_type" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:String">File</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="image_url" Type="FieldArgument" />
+        <isactr:FieldObject Name="_file" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="upr:IResource">[UiPath.Platform.ResourceHandling.LocalResource.FromPath(in_photo_path)]</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="topK" Type="FieldArgument" />
+        <isactr:FieldObject Name="topP" Type="FieldArgument" />
+        <isactr:FieldObject Name="top_p" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:Int64">1</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="instruction" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:String">You are a helpful assistant</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="max_tokens" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:Int64" />
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="temperature" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:Double">0</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="frequency_penalty" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:Int64">0</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="presence_penalty" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:Int64">0</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="n" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:Int64">1</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="_stop" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:String" />
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="out_text" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <OutArgument x:TypeArguments="x:String">[out_image_analysis]</OutArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="Jit_v1_sub_chat_sub_completion" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <OutArgument x:TypeArguments="uiascb:v1_sub_chat_sub_completion_Create" />
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+      </isactr:ConnectorActivity.FieldObjects>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </isactr:ConnectorActivity>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,48" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;out_image_analysis&quot; + out_image_analysis]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:LogMessage>
+    <ui:WriteTextFile File="{x:Null}" Output="{x:Null}" DisplayName="Write Text File" FileName="[path.Combine(in_AnalysisPath,path.GetFileNameWithoutExtension(in_photo_path)+&quot;_analysis_log.html&quot;)]" sap:VirtualizedContainerService.HintSize="450,48" sap2010:WorkflowViewState.IdRef="WriteTextFile_1" Text="[&quot;&lt;h1&gt; Logs of Gen AI analysis : &lt;/h1&gt;&quot; + &#xD;&#xA;&quot;&lt;h2&gt; Photos Damage Analysis &lt;/h2&gt;&quot; + &quot;&lt;p&gt;&quot;+ out_image_analysis+&quot;&lt;/p&gt;&quot;]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:WriteTextFile>
+  </Sequence>
+</Activity>
