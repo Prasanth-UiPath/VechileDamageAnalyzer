@@ -85,7 +85,7 @@
       <AssemblyReference>CE5D4570506_v1_sub_c.F3N9eMuBeQ13sETf31wNDg2</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1121,807.6566666666666" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1115,336" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="s:String[]" Name="SelectedPhotos" />
       <Variable x:TypeArguments="x:String" Name="AnalysisFolder" />
@@ -139,7 +139,7 @@
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:String">
           <ActivityAction.Argument>
-            <DelegateInArgument x:TypeArguments="x:String" Name="currentText" />
+            <DelegateInArgument x:TypeArguments="x:String" Name="currentPhoto" />
           </ActivityAction.Argument>
           <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="480,96" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <sap:WorkflowViewStateService.ViewState>
@@ -149,9 +149,9 @@
             </sap:WorkflowViewStateService.ViewState>
             <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Analyzer - Invoke Workflow File (Analyzer.xaml)" sap:VirtualizedContainerService.HintSize="450,48" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Analyzer.xaml">
               <ui:InvokeWorkflowFile.Arguments>
-                <InArgument x:TypeArguments="x:String" x:Key="in_AnalysisPath" />
+                <InArgument x:TypeArguments="x:String" x:Key="in_AnalysisPath">[AnalysisFolder]</InArgument>
                 <OutArgument x:TypeArguments="x:String" x:Key="out_image_analysis" />
-                <InArgument x:TypeArguments="x:String" x:Key="in_photo_path" />
+                <InArgument x:TypeArguments="x:String" x:Key="in_photo_path">[currentPhoto]</InArgument>
               </ui:InvokeWorkflowFile.Arguments>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
